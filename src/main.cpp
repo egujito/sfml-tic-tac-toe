@@ -1,8 +1,10 @@
 #include "board.hpp"
 
+
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(640, 640), "SFML TTT");
+
+    sf::RenderWindow window(sf::VideoMode(WIDTH, HEIGHT), "SFML TTT");
     Board board;
     board.setCells();
     while (window.isOpen())
@@ -30,12 +32,16 @@ int main()
             switch (winner)
             {
                 case X:
-                    std::cout << "X wins" << std::endl;
+                    std::cout << "X wins!" << std::endl;
                     break;
                 case O:
-                    std::cout << "O wins" << std::endl;
+                    std::cout << "O wins!" << std::endl;
+                    break;
+                case TIE:
+                    std::cout << "It's a tie!" << std::endl;
+                    break;
             }
-            sleep(2);
+            sleep(5);
             exit(0);
         }
     }
